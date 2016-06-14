@@ -1,42 +1,47 @@
 extend _template.jade
 
-block title 
-	title Контакты
+block vars
+  - var title = "Контакты | Бутик VipGift.su";
+
 block content
-	h1 Контакты
-	ul.list-unstyled.contacts-page-list
-		li
-			i.fa.fa-map-marker
-				|      Санкт-Петербург, ДЦ «Елизаровский», Елизарова, 38А
-		li
-			i.fa.fa-envelope
-					|     info@vipgift.su
-	.map
-		script(type='text/javascript' charset='utf-8' async src='https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=nD_olpY7esK3FGbm-F--prMxduxZhvZi&width=100%&height=400&lang=ru_RU&sourceType=constructor&scroll=true')
-	hr
-	form.form-horizontal.contacts-page-form#myForm(role='form', action='#')
-		.row
-			.form-group.contacts-page-form
-				label.control-label.col-sm-2 Ваше имя:
-				.col-sm-10
-					input.form-control.contacts-page-input(type='text', placeholder='Введите имя')
-			.form-group
-				label.control-label.col-sm-2 Телефон:
-					span.eror-sign   *
-				.col-sm-10
-					input.form-control.contacts-page-input.need-valid#phone(type='tel', name='phone', placeholder='+7(___) ___-____')
-			.form-group
-				label.control-label.col-sm-2 Почта:
-					span.eror-sign   *
-				.col-sm-10
-					input.form-control.contacts-page-input.mail.need-valid(type='email', name='email', placeholder='Введите e-mail')
-			.form-group
-				label.control-label.col-sm-2 Ваш вопрос:
-				.col-sm-10
-					textarea.form-control(rows='6')
-					input(type='hidden', name='save', value='contact')
-				button.btn.btn-default.contacts-page-btn(type='submit') Отправить
+  h1 Контакты
+  ul.list-unstyled.contacts-page-list
+    li
+      i.fa.fa-map-marker
+        |      Санкт-Петербург, ДЦ «Елизаровский», Елизарова, 38А, офис 300
+    li
+      i.fa.fa-envelope
+        |     info@vipgift.su
+    li
+      i.fa.fa-phone
+        |     8 (911) 738-50-69
+  .map
+    script(type='text/javascript' charset='utf-8' async src='https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=nD_olpY7esK3FGbm-F--prMxduxZhvZi&width=100%&height=400&lang=ru_RU&sourceType=constructor&scroll=true')
+  hr
+  form.form-horizontal.contacts-page-form#myForm(role='form', action='#')
+    .row
+      .form-group.contacts-page-form
+        label.control-label.col-sm-2 Ваше имя:
+        .col-sm-10
+          input.form-control.contacts-page-input(type='text', placeholder='Введите имя')
+      .form-group
+        label.control-label.col-sm-2 Телефон:
+          span.error-sign   *
+        .col-sm-10
+          input.form-control.contacts-page-input.need-valid#phone(type='tel', name='phone', placeholder='+7(___) ___-____')
+      .form-group
+        label.control-label.col-sm-2 Почта:
+          span.error-sign   *
+        .col-sm-10
+          input.form-control.contacts-page-input.mail.need-valid(type='email', name='email', placeholder='Введите e-mail')
+      .form-group
+        label.control-label.col-sm-2 Ваш вопрос:
+        .col-sm-10
+          textarea.form-control(rows='6')
+          input(type='hidden', name='save', value='contact')
+        button.btn.btn-default.contacts-page-btn(type='submit') Отправить
+
 block append script 
-	script(src='js/valid.min.js')
-	script(src='js/maskedinput.min.js')
-	script(type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js')
+  script(src='js/valid.min.js')
+  script(src='js/maskedinput.min.js')
+  script(type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js')

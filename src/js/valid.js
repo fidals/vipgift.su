@@ -1,6 +1,6 @@
- 
 $(document).ready(function() {
   var form = $('#myForm');
+
   form.validate({
     rules: {
       phone: {
@@ -13,7 +13,7 @@ $(document).ready(function() {
     },
     messages: {
         phone : {
-          required : "Введите телефон",
+          required: "Введите телефон",
           regex: /\+7\(\d{3}\) \d{3}-\d{4}/
         },
         email: {
@@ -28,7 +28,7 @@ $(document).ready(function() {
     unhighlight: function(element, errorClass, validClass) {
       $(element).closest('.need-valid').removeClass(errorClass);
     }
-
   });
+
   $("#phone").mask("+7(999) 999-9999")
 });

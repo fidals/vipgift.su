@@ -1,96 +1,120 @@
+block vars
+  - var title = "VIP подарки | Бутик VipGift.su";
+  - var description = "Бутик необычных подарков в Санкт-Петербурге.";
+  - var keywords = "подарок эксклюзивные необычные магазин дорогой";
+
 doctype html
 html
-	head
-		meta(charset='UTF-8')
-		meta(name='viewport', content='width=device-width, initial-scale=1')
-		block title
-		block headLinks
-			link(rel='icon', type='image/x-icon', href='img/favicon.ico')
-			link(href='http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', rel='stylesheet')
-			link(href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800', rel='stylesheet', type='text/css')
-			link(href='http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic', rel='stylesheet', type='text/css')
-		block headStyles
-			link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css', integrity='sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7', crossorigin='anonymous')
-			link(rel='stylesheet', href='css/styles.min.css')
-	body.page-wrapper
-		nav.navbar.navbar-default.nav-custom
-			.container
-				a.navbar-brand(href='/', title='Главная')
-					img.img-responsive.header-logo(src='img/logo.png', alt='Логотип')
-				.navbar-header
-					button.navbar-toggle.btn-nav-custom(type='button', data-toggle='collapse', data-target='#nav-header-collapse')
-						span.sr-only Toggle navigation
-						span.icon-bar
-						span.icon-bar
-						span.icon-bar
-				#nav-header-collapse.navbar-collapse.collapse
-					ul.nav-custom-list.nav.navbar-nav.navbar-right
-						li#dropdown-services.dropdown
-							a.dropdown-toggle.nav-custom-link(href='/', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
-								| Подарки 
-								span.caret.hidden-xs
-							ul#submenu-services.dropdown-menu.hidden-xs.dropdown-submenu
-								li
-									a(href='gift-for-men.html') Подарки мужчинам
-								li
-									a(href='gift-for-women.html') Подарки женщинам
-								li
-									a(href='buisness-gift.html') Бизнес подарки
-								li
-									a(href='gift-for-boss.html') Подарки руководителю
-						li
-							a.nav-custom-link(href='delivery.html' rel='nofollow') Доставка
-						li
-							a.nav-custom-link(href='pay.html' rel='nofollow') Оплата
-						li
-							a.nav-custom-link(href='contacts.html' rel='nofollow') Контакты
-		section.content
-			.container
-				.slider
-					block content
-		footer.footer-wrapper
-			.container
-				.row
-					.footer-section
-						.col-md-3.col-xs-12
-						.col-md-6.col-xs-12
-							.footer-copyright.text-center Copyright © 2016 "vipgift.su" (Санкт-Петербург)
-						.col-md-3.col-xs-12
-							.footer-contacts
-								span.contacts-info
-									a.contacts-link-f(href='malito: info@vipgift.su')
-										i.fa.fa-envelope
-										|   info@vipgift.su
-		block script
-			script(src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js')
-			script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name="description", content="#{description}")
+    meta(name="keywords", content="#{keywords}")
 
-			// Yandex.Metrika counter
+    title #{title}
+
+    block headLinks
+      link(rel='icon', type='image/x-icon', href='img/favicon.ico')
+      link(href='http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', rel='stylesheet')
+      link(href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800', rel='stylesheet')
+      link(href='http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic', rel='stylesheet')
+
+    block headStyles
+      link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css',
+      integrity='sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7', crossorigin='anonymous', rel='stylesheet')
+      link(href='css/styles.min.css', rel='stylesheet')
+
+  body.page-wrapper
+    nav.navbar.navbar-default.nav-custom
+      .container
+        a.navbar-brand.header-link(href='/', title='Главная')
+          img.img-responsive.header-logo(src='img/logo.png', alt='Логотип')
+        .navbar-header
+          button.navbar-toggle.btn-nav-custom(type='button', data-toggle='collapse', data-target='#nav-header-collapse')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+
+        #nav-header-collapse.navbar-collapse.collapse
+          ul.nav-custom-list.nav.navbar-nav.navbar-right
+            li#dropdown-services.dropdown
+              a.dropdown-toggle.nav-custom-link(href='/', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+                | Подарки
+                span.caret.hidden-xs
+              ul#submenu-services.dropdown-menu.hidden-xs.dropdown-submenu
+                li
+                  a(href='gift-for-men.html') Подарки мужчинам
+                li
+                  a(href='gift-for-women.html') Подарки женщинам
+                li
+                  a(href='buisness-gift.html') Бизнес подарки
+                li
+                  a(href='gift-for-boss.html') Подарки руководителю
+            li
+              a.nav-custom-link(href='delivery.html' rel='nofollow') Доставка
+            li
+              a.nav-custom-link(href='pay.html' rel='nofollow') Оплата
+            li
+              a.nav-custom-link(href='contacts.html' rel='nofollow') Контакты
+
+    section.content
+      .container
+        .slider
+          block content
+
+    footer.footer-wrapper
+      .container
+        .row
+          .col-md-3
+          .col-md-5
+            .footer-copyright.text-center Copyright © 2016 vipgift.su (Санкт-Петербург)
+          .col-md-4
+            .footer-contacts
+              span.contacts-info
+                a.contacts-link-f(href='mailto:info@vipgift.su')
+                  i.fa.fa-envelope
+                  |   info@vipgift.su
+              span.contacts-info
+                a.contacts-link-f(href='tel:89117385069')
+                  i.fa.fa-phone
+                  |   8 (911) 738-50-69
+
+    block script
+      script(src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js')
+      script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js')
+
+// Yandex.Metrika counter
 script(type='text/javascript').
-	(function (d, w, c) {
-	(w[c] = w[c] || []).push(function() {
-	try {
-	w.yaCounter37650755 = new Ya.Metrika({
-	id:37650755,
-	clickmap:true,
-	trackLinks:true,
-	accurateTrackBounce:true,
-	webvisor:true
-	});
-	} catch(e) { }
-	});
-	var n = d.getElementsByTagName("script")[0],
-	s = d.createElement("script"),
-	f = function () { n.parentNode.insertBefore(s, n); };
-	s.type = "text/javascript";
-	s.async = true;
-	s.src = "https://mc.yandex.ru/metrika/watch.js";
-	if (w.opera == "[object Opera]") {
-	d.addEventListener("DOMContentLoaded", f, false);
-	} else { f(); }
-	})(document, window, "yandex_metrika_callbacks");
+  (function(d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+      try {
+        w.yaCounter37650755 = new Ya.Metrika({
+          id: 37650755,
+          clickmap: true,
+          trackLinks: true,
+          accurateTrackBounce: true,
+          webvisor: true
+        });
+      } catch (e) {
+      }
+    });
+    var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function() {
+              n.parentNode.insertBefore(s, n);
+            };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = "https://mc.yandex.ru/metrika/watch.js";
+    if (w.opera == "[object Opera]") {
+      d.addEventListener("DOMContentLoaded", f, false);
+    } else {
+      f();
+    }
+  })(document, window, "yandex_metrika_callbacks");
 noscript
-	div
-		img(src='https://mc.yandex.ru/watch/37650755', style='position:absolute; left:-9999px;', alt='')
+  div
+    img(src='https://mc.yandex.ru/watch/37650755', style='position:absolute; left:-9999px;', alt='')
 // /Yandex.Metrika counter
 
